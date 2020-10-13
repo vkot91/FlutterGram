@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "112551848123",
+    "firebase_url": "https://flutter-insta-app-vkot.firebaseio.com",
+    "project_id": "flutter-insta-app-vkot",
+    "storage_bucket": "flutter-insta-app-vkot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112551848123:android:891f734f2775d832b5e19e",
+        "android_client_info": {
+          "package_name": "com.example.fluttershare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112551848123-mfc32q07c6g17kbivsov5f8m9s377jfd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fluttershare",
+            "certificate_hash": "92bb19ab46936d078bd2e72e7782aa4eb34ec0d2"
+          }
+        },
+        {
+          "client_id": "112551848123-dh6ld07cb4oa4vg8njc0ch0od7ie6pbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-RMk3dOeJUn3M__4q-94lC0wiLDYLY1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112551848123-dh6ld07cb4oa4vg8njc0ch0od7ie6pbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
