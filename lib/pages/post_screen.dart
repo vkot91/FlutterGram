@@ -4,7 +4,7 @@ import 'package:fluttershare/widgets/header.dart';
 import 'package:fluttershare/widgets/post.dart';
 import 'package:fluttershare/widgets/progress.dart';
 
-class PostScreen extends StatelessWidget {
+class PostScreen extends StatelessWidget  {
   final String userId;
   final String postId;
 
@@ -12,7 +12,7 @@ class PostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    return  FutureBuilder(
       future: postsRef
           .document(userId)
           .collection('userPosts')
