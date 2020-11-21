@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttershare/models/user.dart';
+import 'package:fluttershare/pages/activity_feed.dart';
 import 'package:fluttershare/pages/home.dart';
 import 'package:fluttershare/widgets/progress.dart';
 
@@ -110,30 +111,39 @@ class _SearchState extends State<Search> {
 
 class UserResult extends StatelessWidget {
   final User user;
+
   UserResult(this.user);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Theme.of(context).primaryColor.withOpacity(0.7),
-        child: Column(
-          children: <Widget>[
-            GestureDetector(
-              onTap: () => print('tapped'),
-              child:ListTile(
-
-                leading: CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  backgroundImage: CachedNetworkImageProvider(user.photoUrl),),
-                  title: Text(user.displayName,style:TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
-                  subtitle:Text(user.username,style:TextStyle(color:Colors.white)) ,
-                )
-
-            ),        
-            Divider(
-                height: 2.0,
-                color:Colors.white54,
+      color: Theme.of(context).primaryColor.withOpacity(0.7),
+      child: Column(
+        children: <Widget>[
+          GestureDetector(
+            onTap: () => showProfile(context, profileId: user.id),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.grey,
+                backgroundImage: CachedNetworkImageProvider(user.photoUrl),
+              ),
+              title: Text(
+                user.displayName,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                user.username,
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-          ],
-        ));
+          ),
+          Divider(
+            height: 2.0,
+            color: Colors.white54,
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -10,20 +10,21 @@ class User {
 
   User({
     this.id,
-   this.username,
+    this.username,
     this.email,
-     this.photoUrl,
-      this.displayName,
-       this.bio});
+    this.photoUrl,
+    this.displayName,
+    this.bio,
+  });
 
-  factory User.fromDocument(DocumentSnapshot doc){
+  factory User.fromDocument(DocumentSnapshot doc) {
     return User(
-      id:doc['id'],
-      email:doc['email'],
+      id: doc.documentID,
+      email: doc['email'],
       username: doc['username'],
       photoUrl: doc['photoUrl'],
       displayName: doc['displayName'],
-      bio:doc['bio']
+      bio: doc['bio'],
     );
-  }       
+  }
 }

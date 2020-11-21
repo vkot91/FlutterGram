@@ -88,7 +88,7 @@ class _EditProfileState extends State<EditProfile> {
   updateProfileData() {
     setState(() {
       displayNameController.text.trim().length < 3 ||
-          displayNameController.text.isEmpty
+              displayNameController.text.isEmpty
           ? _displayNameValid = false
           : _displayNameValid = true;
       bioController.text.trim().length > 100
@@ -137,57 +137,57 @@ class _EditProfileState extends State<EditProfile> {
       body: isLoading
           ? circularProgress()
           : ListView(
-        children: <Widget>[
-          Container(
-            child: Column(
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 16.0,
-                    bottom: 8.0,
-                  ),
-                  child: CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage:
-                    CachedNetworkImageProvider(user.photoUrl),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(16.0),
+                Container(
                   child: Column(
                     children: <Widget>[
-                      buildDisplayNameField(),
-                      buildBioField(),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 16.0,
+                          bottom: 8.0,
+                        ),
+                        child: CircleAvatar(
+                          radius: 50.0,
+                          backgroundImage:
+                              CachedNetworkImageProvider(user.photoUrl),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Column(
+                          children: <Widget>[
+                            buildDisplayNameField(),
+                            buildBioField(),
+                          ],
+                        ),
+                      ),
+                      RaisedButton(
+                        onPressed: updateProfileData,
+                        child: Text(
+                          "Update Profile",
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: FlatButton.icon(
+                          onPressed: logout,
+                          icon: Icon(Icons.cancel, color: Colors.red),
+                          label: Text(
+                            "Logout",
+                            style: TextStyle(color: Colors.red, fontSize: 20.0),
+                          ),
+                        ),
+                      ),
                     ],
-                  ),
-                ),
-                RaisedButton(
-                  onPressed: updateProfileData,
-                  child: Text(
-                    "Update Profile",
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: FlatButton.icon(
-                    onPressed: logout,
-                    icon: Icon(Icons.cancel, color: Colors.red),
-                    label: Text(
-                      "Logout",
-                      style: TextStyle(color: Colors.red, fontSize: 20.0),
-                    ),
                   ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

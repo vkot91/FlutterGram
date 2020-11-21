@@ -119,7 +119,7 @@ class _UploadState extends State<Upload>
 
   Future<String> uploadImage(imageFile) async {
     StorageUploadTask uploadTask =
-    storageRef.child("post_$postId.jpg").putFile(imageFile);
+        storageRef.child("post_$postId.jpg").putFile(imageFile);
     StorageTaskSnapshot storageSnap = await uploadTask.onComplete;
     String downloadUrl = await storageSnap.ref.getDownloadURL();
     return downloadUrl;
@@ -214,7 +214,7 @@ class _UploadState extends State<Upload>
           ListTile(
             leading: CircleAvatar(
               backgroundImage:
-              CachedNetworkImageProvider(widget.currentUser.photoUrl),
+                  CachedNetworkImageProvider(widget.currentUser.photoUrl),
             ),
             title: Container(
               width: 250.0,
@@ -292,4 +292,3 @@ class _UploadState extends State<Upload>
     return file == null ? buildSplashScreen() : buildUploadForm();
   }
 }
-//EDIT USER POC
